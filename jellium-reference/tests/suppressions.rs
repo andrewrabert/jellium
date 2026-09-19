@@ -291,7 +291,7 @@ fn no_manifest_allows_a_lint() {
     assert!(sites.is_empty(), "manifests lowering a lint: {sites:?}");
 }
 
-/// The `disallowed-methods` entries `/CLAUDE.md` names, which stay; an entry
+/// The `disallowed-methods` entries `/AGENTS.md` names, which stay; an entry
 /// joining them raises strictness and is welcome.
 const FORCED: [&str; 9] = [
     "core::result::Result::ok",
@@ -399,7 +399,7 @@ fn no_command_line_lowers_a_lint() {
     assert!(sites.is_empty(), "command lines lowering a lint: {sites:?}");
 }
 
-/// The door `/CLAUDE.md`'s deserializing and unpacking rules name.
+/// The door `/AGENTS.md`'s deserializing and unpacking rules name.
 const FAILURE_DOOR: &str = "jellium-web/src/failure.rs";
 
 /// Every site in `jellium-web/src` outside `door` that names `spelling`, as
@@ -424,7 +424,7 @@ fn spelled_outside_the_door(door: &str, spelling: &str) -> Vec<String> {
 }
 
 /// `jellium-web/src/failure.rs` holds every deserializer `jellium-web`
-/// constructs, so the doors `/CLAUDE.md` names cannot be spelled around.
+/// constructs, so the doors `/AGENTS.md` names cannot be spelled around.
 #[test]
 fn only_the_doors_deserialize() {
     let sites = spelled_outside_the_door(FAILURE_DOOR, "Deserializer::from_");
